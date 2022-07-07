@@ -33,7 +33,7 @@ public class BeerService {
 
     //verifica por nome da cerveja
     public BeerDTO findByName(String name) throws BeerNotFoundException {
-        Beer foundBeer = beerRepository.findName(name)
+        Beer foundBeer = beerRepository.findByName(name)
                 .orElseThrow(() -> new BeerNotFoundException(name));
         return beerMapper.toDTO(foundBeer);
 
@@ -54,7 +54,7 @@ public class BeerService {
 
     // verifica alteraçao de registros
     private void verifyIfIsAlreadyRegistered(String name) throws BeerAlreadyRegisteredException {
-        Optional<Beer> optSavedBeer = beerRepository.findName(name);
+        Optional<Beer> optSavedBeer = beerRepository.findByName(name);
         if (optSavedBeer.isPresent()) {
             throw new BeerAlreadyRegisteredException(name);
         }

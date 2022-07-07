@@ -8,12 +8,13 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux;
+
 
 import static springfox.documentation.builders.RequestHandlerSelectors.basePackage;
 
 @Configuration
-@EnableSwagger2
+@EnableSwagger2WebFlux
 public class SwaggerConfig {
 
     private static final String BASE_PACKAGE = "one.digitalinnovation.beerstock.controller";
