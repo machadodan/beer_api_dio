@@ -114,7 +114,7 @@ public class BeerServiceTest {
         //when (quando)
         when(beerRepository.findByName(expectedFoundBeerDTO.getName())).thenReturn(Optional.empty());
 
-        //then entao
+        //then (entao)
         assertThrows(BeerNotFoundException.class, () -> beerService.findByName(expectedFoundBeerDTO.getName()));
 
     }
