@@ -31,7 +31,7 @@ Em suma, no desafio foi explorado os seguintes conceitos e implementados testes 
         . Criação, listagem, consulta por nome e exclusão 
         
  Na camada de Controller:
-  . Criação, listagem, consulta por nome e exclusão 
+       . Criação, listagem, consulta por nome e exclusão 
 
 
 
@@ -39,30 +39,46 @@ Em suma, no desafio foi explorado os seguintes conceitos e implementados testes 
 
 Utilizando o conceito de TDD foi implementado também teste para incremento/decremento do número de cerveja ao estoque através do verbo HTTP PATH.
 
-Quantidade estoque executar rodar o método de atualização parcial:
+Quantidade estoque antes de executar o método de atualização parcial:
 {
+
 "name": "Colorado appia",
+
 "brand": "Colorado",
+
 "max": 20,
+
 "quantity": 4,
+
 "type": "LAGER"
+
 }
 
 Quantidade estoque após executar o método de atualização parcial:
 PATCH: http://localhost:8090/api/v1/beers/1/increment
 
 {
+
 "quantity": 2        //quantidade adicionada
+
 }
 
 Resultado:
+
  {
+ 
     "id": 1,
+    
     "name": "Colorado appia",
+    
     "brand": "Colorado",
+    
     "max": 20,
+    
     "quantity": 6,
+    
     "type": "LAGER"
+    
 }
 
 Melhoria realizada
@@ -73,15 +89,24 @@ Estoque após a implementação do método:
 PATCH: http://localhost:8090/api/v1/beers/1/decrement 
 
 {
+
 "quantity": 4       //quantidade decrementada 
+
 }
 
 Resultado:
+
 {
+
     "id": 1,
+    
     "name": "Colorado appia",
+    
     "brand": "Colorado",
+    
     "max": 20,
+    
     "quantity": 2,          //quantidade após decremento
+    
     "type": "LAGER"
 }
