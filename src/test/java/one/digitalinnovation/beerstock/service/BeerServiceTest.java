@@ -152,4 +152,26 @@ public class BeerServiceTest {
         assertThat(foundListBeersDTO, is(empty()));
 
     }
+
+    @Test
+    // teste validação de exclusão de cerveja
+    void whenExclusionIsCalledWithValidIdThenABeerShouldBeDeleted() throws BeerNotFoundException{
+
+        // given entrada
+        BeerDTO expectedDeletedBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
+        Beer expectedDeletedBeer = beerMapper.toModel(expectedDeletedBeerDTO);
+
+        //when
+        when(beerRepository.findById(expectedDeletedBeerDTO.getId())).thenReturn(Optional.of(expectedDeletedBeer));
+        doNothing().when(beerRepository).deleteById(expectedDeletedBeerDTO.getId());
+
+        //then
+        beerService.deleteById(expectedDeletedBeerDTO.getId());
+
+        //Primeiro o metodo faz a busca
+        verify(beerRepository, times(1)).findById(expectedDeletedBeerDTO.getId());
+        //Depois faz a exclusão
+        verify(beerRepository, times(1)).deleteById(expectedDeletedBeerDTO.getId());
+
+    }
 }
