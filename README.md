@@ -16,7 +16,7 @@ Frameworks:
 
 JUnit, Mockito e Hamcrest
 
-[teclas Atalho IntelliJ]( https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf/) 💻 - Working on it.
+[Palheta de atalhos de comandos do Intellij](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf/) 💻 - Working on it.
 
 
 Em suma, no desafio foi explorado os seguintes conceitos e implementados testes de validação:
@@ -27,11 +27,11 @@ Em suma, no desafio foi explorado os seguintes conceitos e implementados testes 
 
 •	Desenvolvido testes unitários para validação de funcionalidades básicas: 
 
-       Na camada de Service:
+       Na camada de Service:       
         . Criação, listagem, consulta por nome e exclusão 
         
- Na camada de Controller:
-       . Criação, listagem, consulta por nome e exclusão 
+       Na camada de Controller:
+        . Criação, listagem, consulta por nome e exclusão 
 
 
 
@@ -40,6 +40,7 @@ Em suma, no desafio foi explorado os seguintes conceitos e implementados testes 
 Utilizando o conceito de TDD foi implementado também teste para incremento/decremento do número de cerveja ao estoque através do verbo HTTP PATH.
 
 Quantidade estoque antes de executar o método de atualização parcial:
+
 {
 
 "name": "Colorado appia",
