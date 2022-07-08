@@ -88,7 +88,6 @@ public class BeerControllerTest {
                 .content(asJsonString(beerDTO)))
                 .andExpect(status().isBadRequest());
     }
-
     @Test
     void whenGETIsCalledWithValidNameThenOkStatusIsReturned() throws Exception {
         // given
@@ -121,7 +120,6 @@ public class BeerControllerTest {
                 .andExpect(status().isNotFound());
 
     }
-
     @Test
     // verifica retorno de lista
     void whenGETListWithBeerIsCalledThenOkStatusIsReturned() throws Exception {
@@ -139,7 +137,6 @@ public class BeerControllerTest {
                 .andExpect(jsonPath("$[0].brand", is(beerDTO.getBrand())))
                 .andExpect(jsonPath("$[0].type", is(beerDTO.getType().toString())));
     }
-
     @Test
         // verifica lista vazia
     void whenGETListWithoutBeerIsCalledThenOkStatusIsReturned() throws Exception {
@@ -155,8 +152,6 @@ public class BeerControllerTest {
                 .andExpect(status().isOk());
 
     }
-
-
     @Test
     void whenDELETEIsCalledWithValidThenNoContentStatusIsReturned() throws Exception {
         // given
@@ -171,7 +166,6 @@ public class BeerControllerTest {
                 .andExpect(status().isNoContent());
 
     }
-
     @Test
     void whenDELETEIsCalledWithInvalidThenNotFoundStatusIsReturned() throws Exception {
         //when
@@ -183,8 +177,7 @@ public class BeerControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-
-        //========= A PARTIR DAQUI SERÁ IMPLEMENTADO OS TESTES DE INCREMENTO E DECREMENTO DE CERVEJAS =======
+    //========= A PARTIR DAQUI SERÁ IMPLEMENTADO OS TESTES DE INCREMENTO E DECREMENTO DE CERVEJAS =======
 
     @Test
     void whenPATCHIsCalledToIncrementDiscountThenOKstatusIsReturned() throws Exception {
@@ -283,7 +276,5 @@ public class BeerControllerTest {
 //                .content(asJsonString(quantityDTO)))
 //                .andExpect(status().isNotFound());
 //    }
-
-
 
 }

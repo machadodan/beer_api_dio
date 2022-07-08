@@ -28,8 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-// 07/07/2022 CONTINUAR DA AULA DE TESTE 10
-
 
 @ExtendWith(MockitoExtension.class)
 public class BeerServiceTest {
@@ -46,9 +44,10 @@ public class BeerServiceTest {
 
     @Test
     void whenBeerInformedThenItShuldBeCreated() throws BeerAlreadyRegisteredException {
+
         // given entrada
        BeerDTO expectedBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
-        Beer expectedSavedBeer = beerMapper.toModel(expectedBeerDTO);
+       Beer expectedSavedBeer = beerMapper.toModel(expectedBeerDTO);
 
         // when quando
         when(beerRepository.findByName(expectedBeerDTO.getName())).thenReturn(Optional.empty());
@@ -86,9 +85,6 @@ public class BeerServiceTest {
 
         //then
        assertThrows(BeerAlreadyRegisteredException.class, () -> beerService.createBeer(expectedBeerDTO));
-
-
-
     }
 
     @Test
@@ -138,8 +134,6 @@ public class BeerServiceTest {
         assertThat(foundListBeersDTO, is(not(empty())));
         assertThat(foundListBeersDTO.get(0), is(equalTo(expectedFoundBeerDTO)));
     }
-
-
     @Test
     // teste que verifica retorno de lista vazia
     void whenListBeerIsCalledThenReturnAnEmptyListOfBeers() {
@@ -151,7 +145,6 @@ public class BeerServiceTest {
         List<BeerDTO> foundListBeersDTO = beerService.listAll();
 
         assertThat(foundListBeersDTO, is(empty()));
-
     }
 
     @Test
@@ -176,9 +169,7 @@ public class BeerServiceTest {
 
     }
 
-
     //========= A PARTIR DAQUI SERÁ IMPLEMENTADO OS TESTES DE INCREMENTO E DECREMENTO DE CERVEJAS =======
-
     @Test
     void whenIncrementIsCalledThenIncrementBeerStock() throws BeerNotFoundException, BeerStockExceededException {
         //given
@@ -221,7 +212,6 @@ public class BeerServiceTest {
         int quantityToIncrement = 45;
         assertThrows(BeerStockExceededException.class, () -> beerService.increment(expectedBeerDTO.getId(), quantityToIncrement));
     }
-
     @Test
     void whenIncrementIsCalledWithInvalidIdThenThrowException() {
         int quantityToIncrement = 10;
@@ -231,7 +221,7 @@ public class BeerServiceTest {
         assertThrows(BeerNotFoundException.class, () -> beerService.increment(INVALID_BEER_ID, quantityToIncrement));
     }
 
-// IMPLEMENTAÇÃO DOS MÉTODOS DE DECREMENTOS DE VERVEJAS
+    // IMPLEMENTAÇÃO DOS MÉTODOS DE DECREMENTOS DE VERVEJAS
     @Test
     void whenDecrementIsCalledThenDecrementBeerStock() throws BeerNotFoundException, BeerStockExceededException {
         BeerDTO expectedBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();

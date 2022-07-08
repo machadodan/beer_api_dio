@@ -86,7 +86,7 @@ Melhoria realizada
 
 Como desafio implementei o método de DECREMENTO de cerveja  	
 
-Estoque após a implementação do método:
+Estoque após a implementação do método de atualização parcial:
 PATCH: http://localhost:8090/api/v1/beers/1/decrement 
 
 {
