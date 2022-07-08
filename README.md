@@ -16,7 +16,7 @@ Frameworks:
 
 JUnit, Mockito e Hamcrest
 
-[Palheta de atalhos de comandos do Intellij](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf/) 💻 - Working on it.
+[Palheta de atalhos de comandos do Intellij](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf) 💻 - Working on it.
 
 
 Em suma, no desafio foi explorado os seguintes conceitos e implementados testes de validação:
